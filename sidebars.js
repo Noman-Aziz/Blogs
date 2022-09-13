@@ -25,6 +25,7 @@
           "wameir",
           "ifihadinvested",
           "hussein-d-talk-series",
+          "delete-recent-commits-from-any-git-branch-locally-and-remotely",
         ],
       },
       {
