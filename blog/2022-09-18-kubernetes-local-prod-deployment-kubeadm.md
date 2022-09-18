@@ -39,7 +39,7 @@ sh get-docker.sh
 
 ## Setting up the cluster
 
-I set up a [control-plane](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/)](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/) on the master node to initialize the cluster using the following command.
+I set up a [control-plane](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/) on the master node to initialize the cluster using the following command.
 
 ```sh
 sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --cri-socket=unix:///var/run/cri-dockerd.sock
