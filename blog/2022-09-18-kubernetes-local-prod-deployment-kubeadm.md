@@ -5,7 +5,7 @@ author: NomanAziz
 author_title: DevSecOps Engineer
 author_url: https://linkedin.com/in/noman-aziz
 author_image_url: /img/nomanaziz2.jpeg
-image: /img/nomanaziz.jpg
+image: /bgimg/kubernetes-logo.webp
 tags: [Docker, K8, DevOps]
 ---
 
