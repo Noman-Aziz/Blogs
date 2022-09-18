@@ -8,47 +8,47 @@
         type: "doc",
         id: "intro",
       },
-      {
-        type: "category",
-        label: "Solutions to Bugs from Day to Day Activities",
-        items: [
-          "debug-crontab-tasks",
-          "fix-docusaurus-solutions",
-          "converting-images-to-webp",
-          "setting-up-ghost-blog-on-linode",
-          "osint",
-          "vps-workspace-accessibility",
-          "bulk-typo-fixing",
-          "subdomain-checks",
-          "vps-issues",
-          "hackthebox-invite",
-          "wameir",
-          "ifihadinvested",
-          "hussein-d-talk-series",
-          "delete-recent-commits-from-any-git-branch-locally-and-remotely",
-        ],
-      },
-      {
-        type: "category",
-        label: "Learning GoLang",
-        items: [
-          "variables-in-golang",
-          "arrays-in-golang",
-        ],
-      },
-      {
-        type: "category",
-        label: "Could Help You",
-        items: [
-          "custom-mails",
-        ],
-      },
-      {
-        type: "category",
-        label: "Infrastructure as Code using Terraform(IaC)",
-        items: [
-          "terraform-kickstart",
-        ],
-      },
+      // {
+      //   type: "category",
+      //   label: "Solutions to Bugs from Day to Day Activities",
+      //   items: [
+      //     "debug-crontab-tasks",
+      //     "fix-docusaurus-solutions",
+      //     "converting-images-to-webp",
+      //     "setting-up-ghost-blog-on-linode",
+      //     "osint",
+      //     "vps-workspace-accessibility",
+      //     "bulk-typo-fixing",
+      //     "subdomain-checks",
+      //     "vps-issues",
+      //     "hackthebox-invite",
+      //     "wameir",
+      //     "ifihadinvested",
+      //     "hussein-d-talk-series",
+      //     "delete-recent-commits-from-any-git-branch-locally-and-remotely",
+      //   ],
+      // },
+      // {
+      //   type: "category",
+      //   label: "Learning GoLang",
+      //   items: [
+      //     "variables-in-golang",
+      //     "arrays-in-golang",
+      //   ],
+      // },
+      // {
+      //   type: "category",
+      //   label: "Could Help You",
+      //   items: [
+      //     "custom-mails",
+      //   ],
+      // },
+      // {
+      //   type: "category",
+      //   label: "Infrastructure as Code using Terraform(IaC)",
+      //   items: [
+      //     "terraform-kickstart",
+      //   ],
+      // },
     ],
   };

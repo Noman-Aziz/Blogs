@@ -1,15 +1,13 @@
 ---
-title: Learning Diary
+title: Notes Diary
 sidebar_position: 1
 slug: /
 ---
 
 
-## Notes
+This is a collection of notes on things I tend to learn and the bugs that i get to fix in my day to day activities.
 
-Here, you will find a collection of notes on things I learn and bug i get to fix in my day to day activities.
-
-### Solutions to Bugs from Day to Day Activities
+<!-- ### Solutions to Bugs from Day to Day Activities
 
 <div class="contentTableContainer">
 
@@ -43,4 +41,4 @@ Here, you will find a collection of notes on things I learn and bug i get to fix
 | --- | ----------------------------------------------------------------------- | ----------------- |
 | 1   | [Setting up free custom mails for your startup](custom-mails) | July 17, 2022   |
 
-</div>
+</div> -->
