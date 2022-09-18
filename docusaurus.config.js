@@ -1,14 +1,14 @@
 module.exports = {
-  title: 'SaintMalik',
-  tagline: 'Penetration Tester and Aspiring AppSec Engineer.',
-  url: 'https://blog.saintmalik.me',
+  title: 'NomanAziz',
+  tagline: 'DevSecOps Engineer and Cyber Security Researcher.',
+  url: 'https://blog.nomanaziz.me',
   baseUrl: '/',
   trailingSlash: true,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/saintmalik.jpg',
-  organizationName: 'saintmalik', // Usually your GitHub org/user name.
-  projectName: 'blog.saintmalik.me', // Usually your repo name.
+  favicon: 'img/nomanaziz.jpg',
+  organizationName: 'noman-aziz', // Usually your GitHub org/user name.
+  projectName: 'Blogs', // Usually your repo name.
   themeConfig: {
     colorMode: {
       defaultMode: "dark",
@@ -17,11 +17,11 @@ module.exports = {
     },
     navbar: {
       hideOnScroll: true,
-      title: "SaintMalik🌟",
+      title: "NomanAziz",
       logo: {
-        alt: "SaintMalik",
-        src: "img/saintmalik.jpg",
-        href: "https://saintmalik.me",
+        alt: "NomanAziz",
+        src: "img/nomanaziz.jpg",
+        href: "https://nomanaziz.me",
         target: "_blank",
       },
       items: [
@@ -33,22 +33,17 @@ module.exports = {
           position: "left",
         },
         {
-          href: 'https://saintmalik.me/about',
+          href: 'https://nomanaziz.me/about',
           label: 'About',
           position: 'right',
         },
         {
-          href: 'https://saintmalik.me/works',
-          label: 'Works',
+          href: 'https://nomanaziz.me/skills',
+          label: 'Skills',
           position: 'right',
         },
         {
-          href: 'https://saintmalik.me/talks',
-          label: 'Talks',
-          position: 'right',
-        },
-        {
-          href: 'https://docs.google.com/document/d/1q0NQV-D_HZPc92cVaLe3ojAZCm_1l6Eb6duu6l7ddpE/edit?usp=sharing',
+          href: 'https://nomanaziz.me/resume',
           label: 'Resume',
           position: 'right',
         },
@@ -60,42 +55,22 @@ module.exports = {
           title: 'Connect',
           items: [
             {
-              label: 'Twitter',
-              href: 'https://twitter.com/saintmalik_',
+              label: 'LinkedIn',
+              href: 'https://linkedin/in/noman-aziz',
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/saintmalik',
+              href: 'https://github.com/noman-aziz',
             },
             {
               label: 'Email',
-              href: 'mailto:saintmalik@protonmail.com',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog  Archive',
-              href: 'https://blog.saintmalik.me/archive',
-            },
-            {
-              label: 'Work',
-              href: 'https://saintmalik.me/works',
-            },
-            {
-              label: 'Resume',
-              href: 'https://docs.google.com/document/d/1q0NQV-D_HZPc92cVaLe3ojAZCm_1l6Eb6duu6l7ddpE/edit?usp=sharing',
+              href: 'mailto:nauman.aziz@pm.me',
             },
           ],
         },
       ],
       copyright: `Last updated on ${new Date().toDateString()}`,
     },
-  },
-  customFields: {
-    imgurl: 'https://saintmalikme.mo.cloudinary.net',
   },
   presets: [
     [
@@ -118,8 +93,8 @@ module.exports = {
           showLastUpdateTime: true,
         },
         blog: {
-          blogTitle: 'Saintmalik Security Blog',
-          blogDescription: 'Blog For Application Security, Open Source, Golang, Web app performanc optimization and more.!',
+          blogTitle: 'NomanAziz Blog',
+          blogDescription: 'Blog For Development & Security Operations tools, tips, tricks and more.!',
           // showReadingTime: true,
           path: "./blog",
           routeBasePath: "/"

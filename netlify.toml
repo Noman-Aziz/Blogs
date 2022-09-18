@@ -1,11 +1,11 @@
 [[redirects]]
-from = "https://www.blog.saintmalik.me"
-to = "https://blog.saintmalik.me"
+from = "https://www.blog.nomanaziz.me"
+to = "https://blog.nomanaziz.me"
 status = 301
 force = true
 
 [[redirects]]
-from = "http://www.blog.saintmalik.me"
-to = "https://blog.saintmalik.me"
+from = "http://www.blog.nomanaziz.me"
+to = "https://blog.nomanaziz.me"
 status = 301
 force = true
