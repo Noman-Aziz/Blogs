@@ -43,8 +43,8 @@ module.exports = {
           position: 'right',
         },
         {
-          href: 'https://nomanaziz.me/resume',
-          label: 'Resume',
+          href: 'https://nomanaziz.me/acheivements',
+          label: 'Achievements',
           position: 'right',
         },
       ],
