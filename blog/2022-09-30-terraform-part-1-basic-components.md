@@ -12,11 +12,11 @@ tags: [IaC, Provisioning, Terraform]
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Giscus from "@giscus/react";
 
-Terraform is an open-source infrastructure as a code tool created by HashiCorp for building, changing, and versioning infrastructure safely and efficiently. It enables application software best practices for defining an infrastructure. Along with that, it is compatible with many clouds and services like AWS, GCP, Azure and so on. The code is written in HashiCorp configuration language in a file that has `.tf` extension.
+Terraform is an open-source infrastructure as a code tool created by HashiCorp for building, changing, and versioning infrastructure safely and efficiently. It enables defining an infrastructure using application software best practices. Along with that, it is compatible with many clouds and services like AWS, Azure, Kubernetes and so on. The code is written in HashiCorp configuration language in a file that has `.tf` extension.
 
 <!--truncate-->
 
-![architecture-diagram](https://res.cloudinary.com/dy09028kh/image/upload/v1664541732/terraform-architecture_naez0i.png)
+![architecture-diagram](https://res.cloudinary.com/dy09028kh/image/upload/v1664541732/terraform-architecture_naez0i.png)<center> <a href="https://www.youtube.com/watch?v=7xngnjfIlK4">www.youtube.com/watch?v=7xngnjfIlK4</a></center>
 
 ## Providers
 
