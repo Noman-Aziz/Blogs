@@ -5,24 +5,25 @@ slug: /
 ---
 
 
-This is a collection of notes on things I tend to learn and the bugs that i get to fix in my day to day activities.
+This is a collection of notes on things I tend to learn and the bugs that I get to fix in my day-to-day activities.
 
-<!-- ### Solutions to Bugs from Day to Day Activities
+### Solutions to Bugs from Day to Day Activities
 
 <div class="contentTableContainer">
 
 |     | Topic                                                                    | Date Posted |
 | --- | ------------------------------------------------------------------------ | ----------------- |
-| 1   | [Debug Crontab Tasks](debug-crontab-tasks) | Sep 1, 2021    |
-| 2  | [Solution to fix some docusaurus bugs](fix-docusaurus-solutions) | Sep 7, 2021    |
+| 1   | [Auto-renew self-signed OpenSSL certificates](auto-renew-self-signed-openssl-certificates) | Nov 1, 2022    |
+
+<!-- | 2  | [Solution to fix some docusaurus bugs](fix-docusaurus-solutions) | Sep 7, 2021    |
 | 3  | [Lazy way of setting up a ghost blog on linode/digital ocean](setting-up-ghost-blog-on-linode) | Dec 6, 2021    |
 | 4  | [How to bulk convert images to webp](converting-images-to-webp) | Jan 5, 2021    |
 | 4  | [Easy Access to Pentesting VPS with via VS Code](vps-workspace-accessibility) | Feb 25, 2022    |
-| 5  | [Automate FInding and Fixing typos in large scale documentation](bulk-typo-fixing) | Apr 04, 2022    |
+| 5  | [Automate FInding and Fixing typos in large scale documentation](bulk-typo-fixing) | Apr 04, 2022    | -->
 
 </div>
 
-### Learning GoLang
+<!-- ### Learning GoLang
 
 <div class="contentTableContainer">
 
