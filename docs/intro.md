@@ -14,6 +14,7 @@ This is a collection of notes on things I tend to learn and the bugs that I get 
 |     | Topic                                                                    | Date Posted |
 | --- | ------------------------------------------------------------------------ | ----------------- |
 | 1   | [Auto-renew self-signed OpenSSL certificates](auto-renew-self-signed-openssl-certificates) | Nov 1, 2022    |
+| 2   | [ELK alerts for Discord via reverse webhook proxy](elk-alerts-setup-via-discord-webhooks-reverse-proxy) | Nov 8, 2022    |
 
 <!-- | 2  | [Solution to fix some docusaurus bugs](fix-docusaurus-solutions) | Sep 7, 2021    |
 | 3  | [Lazy way of setting up a ghost blog on linode/digital ocean](setting-up-ghost-blog-on-linode) | Dec 6, 2021    |
