@@ -13,6 +13,7 @@
         label: "Solutions to Bugs from Day to Day Activities",
         items: [
           "auto-renew-self-signed-openssl-certificates",
+          "elk-alerts-setup-via-discord-webhooks-reverse-proxy"
         ],
       },
       // {
