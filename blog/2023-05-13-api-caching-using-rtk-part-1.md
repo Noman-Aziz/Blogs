@@ -1,6 +1,6 @@
 ---
 slug: api-caching-using-rtk-part-1
-title: Catching Your API Requests with RTK Query - Part 1 - Setting up Store & ApiBase
+title: Caching Your API Requests with RTK Query - Part 1 - Setting up Store & ApiBase
 author: NomanAziz
 author_title: Full Stack Web3 Developer | DevSecOps Engineer
 author_url: https://linkedin.com/in/noman-aziz
