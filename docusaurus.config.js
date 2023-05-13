@@ -1,6 +1,6 @@
 module.exports = {
   title: 'NomanAziz',
-  tagline: 'DevSecOps Engineer and Cyber Security Researcher.',
+  tagline: 'Full Stack Web3 Developer | DevSecOps Engineer',
   url: 'https://blog.nomanaziz.me',
   baseUrl: '/',
   trailingSlash: true,
