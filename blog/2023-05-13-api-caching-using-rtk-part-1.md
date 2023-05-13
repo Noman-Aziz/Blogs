@@ -14,9 +14,11 @@ import Giscus from "@giscus/react";
 
 As a developer, if you've used React before, you might have relied on `useState` or `useEffect` hooks to fetch data from APIs and then stored that data in a Redux store for state management. While this approach may work well for small projects, it can quickly become inefficient and lead to performance issues when building larger-scale web applications. That's where `Redux Toolkit Query` comes in to simplify your API calls and help you focus on building great user experiences.
 
-RTK Query is an optional add-on in the Redux Toolkit package that simplifies data fetching and caching. It is built on top of the other APIs in Redux Toolkit and leverages RTK's APIs like `createSlice` and `createAsyncThunk` to implement its capabilities. Developers typically use async middleware modules like Thunk for API interaction when working with Redux. RTK Query allows developers to create a slice to handle fetch requests, similar to React Query but with the benefit of being directly integrated with Redux
-
 <!--truncate-->
+
+## RTK Query
+
+RTK Query is an optional add-on in the Redux Toolkit package that simplifies data fetching and caching. It is built on top of the other APIs in Redux Toolkit and leverages RTK's APIs like `createSlice` and `createAsyncThunk` to implement its capabilities. Developers typically use async middleware modules like Thunk for API interaction when working with Redux. RTK Query allows developers to create a slice to handle fetch requests, similar to React Query but with the benefit of being directly integrated with Redux
 
 ## Setting up ApiBase
 
