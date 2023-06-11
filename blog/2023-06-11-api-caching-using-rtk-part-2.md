@@ -168,7 +168,7 @@ So, we have applied `Orders` tag to our specific query endpoint. When mutation e
 This wraps up our RTK Query series. I hope this series has been helpful for using RTK Query in your application. There are many things that can be improved here. I encourage you to try out ourself and leave some suggestions in the comments section. Thanks for reading!
 
 
-<br``/>
+<br/>
 <h2>Comments</h2>
 <Giscus
 id="comments"
