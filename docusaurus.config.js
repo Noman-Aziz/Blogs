@@ -29,7 +29,7 @@ module.exports = {
         {
           to: "/docs/",
           activeBasePath: "docs",
-          label: "Notes",
+          label: "Diary",
           position: "left",
         },
         {
@@ -37,6 +37,11 @@ module.exports = {
           label: 'About',
           position: 'right',
         },
+        {
+          href: 'https://notes.nomanaziz.me',
+          label: 'Notes',
+          position: 'right',
+        },        
         {
           href: 'https://nomanaziz.me/skills',
           label: 'Skills',
