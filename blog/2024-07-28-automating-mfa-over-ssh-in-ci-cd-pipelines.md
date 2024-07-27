@@ -57,7 +57,7 @@ You can see that after providing the private key, it asks for the passphrase for
 
 Hence, our Expect script for SSH will look like this:
 
-```expect
+```bash
 #!/usr/bin/env expect
 
 set USER [lindex $argv 0]
@@ -90,7 +90,7 @@ In the script, we first accept all the input parameters as command line argument
 
 While this seems like a standalone script for automation, we can modify it slightly for use in CI/CD pipelines by removing the `interact` keyword and specifying the workflow command directly in the SSH input. Additionally, we should store all sensitive variables like `MFA_SECRET_KEY`, `PASSPHRASE`, etc., in a secrets manager like GitHub Secrets for GitHub Actions.
 
-```expect
+```bash
 #!/usr/bin/env expect
 
 ...
@@ -104,7 +104,7 @@ expect eof
 
 Similarly, the script can be slightly modified for the scp command:
 
-```expect
+```bash
 #!/usr/bin/env expect
 
 ...
