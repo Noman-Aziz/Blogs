@@ -9,9 +9,14 @@ image: https://res.cloudinary.com/dy09028kh/image/upload/v1722106923/ed-hardie-R
 tags: [SSH, MFA, Expect, DevOps, Automation]
 ---
 
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Giscus from "@giscus/react";
+
 You might have heard of the trade-off between security and usability. It's true that a computer without a password is usable but not very secure. On the other hand, a computer that makes you re-authenticate every 5 minutes with a password and TOTP code may be secure but not very usable.
 
 I faced a similar situation. I was tasked with configuring SSH to use Multi-Factor Authentication (MFA). While this was relatively straightforward, the real challenge was automating it in CI/CD pipelines that relied on SSH to access the target server.
+
+<!--truncate-->
 
 ## MFA Security Controls
 
