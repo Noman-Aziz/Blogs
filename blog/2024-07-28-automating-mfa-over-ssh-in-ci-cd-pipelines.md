@@ -116,7 +116,9 @@ spawn scp -i $PRIVATE_KEY_PATH -P $PORT $LOCAL_PATH $USER@$HOST:$REMOTE_PATH
 expect eof
 ```
 
+:::tip
 When running automation scripts using the Expect utility, you may encounter situations where your program exits before completion, especially when something takes time and no output is shown on the screen before completion. In these scenarios, you can set an infinite timeout using `set timeout -1` in your script.
+:::
 
 ## Closing Remarks
 I hope this guide has been helpful for those trying to automate tasks while enhancing security controls. There are always ways to improve, and I encourage you to try it yourself and share any suggestions in the comments section. Thanks for reading!
