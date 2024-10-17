@@ -69,7 +69,7 @@ module.exports = {
             },
             {
               label: 'Email',
-              href: 'mailto:REDACTED',
+              href: 'mailto:mail@nomanaziz.me',
             },
           ],
         },
