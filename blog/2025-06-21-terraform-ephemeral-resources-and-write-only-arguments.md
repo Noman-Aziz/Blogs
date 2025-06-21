@@ -74,7 +74,7 @@ Now analyzing the state file, we can see that it doesn't store the ephemeral res
 
 ## Write-Only Arguments
 
-This feature was introduced in Terraform version 1.11, which solved the problem of lacking ephemeral resources. Suppose you initialize the secret at runtime via a variable, but you have to provide it in a resource instead of a provider. When you provide the secret in the resource, its value gets stored in a state file, like in the example below.
+These were introduced in Terraform version 1.11, addressing a critical feature that was lacking in ephemeral resources. Suppose you initialize the secret at runtime via a variable, but you have to provide it in a resource instead of a provider. When you provide the secret in the resource, its value gets stored in a state file, like in the example below.
 
 ```tf
 variable "db_password" {
@@ -92,12 +92,12 @@ resource "aws_db_instance" "test" {
 
 ![normal-resource](https://res.cloudinary.com/dy09028kh/image/upload/v1750503203/terraform-ephemeral-resources-and-write-only-arguments/ngwozkogf8py3ailxlzw.png)
 
-Although the variable's value didn't get stored, the aws_db_instance resource stored the password for state comparison. With the write-only attribute, you can provide the password, but it will not get stored in the state file.
+Although the variable's value didn't get stored, the `aws_db_instance` resource stored the password for state comparison. With the write-only attribute, you can provide the password, but it will not get stored in the state file.
 
 But how would Terraform know that the password was changed if it has nothing to compare it to? To solve it, Terraform provides a write-only version attribute that triggers the password change.
 
 :::tip
-You can read HashiCorp's announcement for version 1.11 on the [blog](https://www.hashicorp.com/en/blog/terraform-1-11-ephemeral-values-managed-resources-write-only-arguments) to get to know more about this.
+You can read HashiCorp's announcement [blog](https://www.hashicorp.com/en/blog/terraform-1-11-ephemeral-values-managed-resources-write-only-arguments) for version 1.11 to get to know more about this.
 :::
 
 Let's take the above example again.
@@ -139,7 +139,7 @@ Well, you may think that this solution will work for every resource, but unfortu
 
 ## The Solution
 
-To solve this, I came up with the idea of updating after creating. This basically means that upon creation of the resource, you provide a dummy password and then update the password with an ephemeral one using a null resource block using CLI commands inside the `local-exec` block.
+To solve this, I came up with the idea of updating after creating. This basically means that upon creation of the resource, you provide a dummy password and then update the password with an ephemeral one using a null resource block and CLI commands inside the `local-exec` block.
 
 Since this is a custom solution, it may seem a bit hacky. But you basically delegate the password handling functionality from resource to null block. Similarly to the write-only version argument, you can set the trigger of the null resource block to a version, and when you modify the version, the null resource block will retrigger and modify the password.
 
