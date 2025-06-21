@@ -1,20 +1,20 @@
 ---
-slug: terraform-ephemeral-resources-&-wo-arguments
-title: Avoiding Secrets Exposure in Terraform State File using Ephemeral Resources & Write-Only Arguments
+slug: terraform-ephemeral-resources-and-write-only-arguments
+title: Avoiding Secrets Exposure in Terraform State File Using Ephemeral Resources & Write-Only Arguments
 author: NomanAziz
 author_title: Security Engineer
 author_url: https://linkedin.com/in/noman-aziz
 author_image_url: /img/nomanaziz3.jpeg
-image: https://res.cloudinary.com/dy09028kh/image/upload/v1722106923/ed-hardie-RMIsZlv8qv4-unsplash_o9gnnn.jpg
+image: https://res.cloudinary.com/dy09028kh/image/upload/v1750504180/terraform-ephemeral-resources-and-write-only-arguments/byahajqadwfiwi6ukhss.jpg
 tags: [Terraform, IaC, Ephemeral, Write-Only, DevSecOps, AWS]
 ---
 
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Giscus from "@giscus/react";
 
-Recently I was working with Terraform when I wanted to create a resource that required a password to be provided to it. Normally, we might either supply the password from the vault via data resource or pass it via a variable at runtime in CI, but that got me thinking that if the main purpose is to avoid hardcoding secrets, the state file will still contain the password in plain text nonetheless.
+Recently, I was working with Terraform and wanted to create a resource that required a password. Normally, we would either supply the password from the vault via data resource or pass it via a variable at runtime in CI, but this got me thinking that if the primary goal is to avoid hardcoding secrets, the state file will still contain the password in plain text.
 
-That led me to finding out about ephemeral resources and the write-only arguments feature in Terraform. Not only can you create random secrets or provide secrets to resources, but you can also update them without them being stored in a state file.
+That led me to learn about ephemeral resources and Terraform's write-only arguments feature. Not only can you generate random secrets or provide secrets to resources, but you can also update them without storing them in the state file.
 
 <!--truncate-->
 
@@ -26,7 +26,7 @@ This feature was introduced in Terraform version 1.10, which provided ephemeral 
 You can read HashiCorp's announcement [blog](https://www.hashicorp.com/en/blog/terraform-1-10-improves-handling-secrets-in-state-with-ephemeral-values) for version 1.10 to get to know more about this.
 :::
 
-Let's take this example in which you have to supply credentials from AWS Secrets Manager via data block to the Postgres provider. Normally you would do something like this:
+Let's take this example in which you have to supply credentials from AWS Secrets Manager via data block to the Postgres provider. Normally you would do something like this.
 
 ```tf
 data "aws_secretsmanager_secret_version" "db_username" {
@@ -45,9 +45,9 @@ provider "postgresql" {
 }
 ```
 
-This would cause the data block resource along with its contents to be stored in the state file, therefore exposing the secret value like this:
+This would cause the data block resource along with its contents to be stored in the state file, therefore exposing the secret value like this.
 
-<INSERT_PIC_1>
+![data-block](https://res.cloudinary.com/dy09028kh/image/upload/v1750503203/terraform-ephemeral-resources-and-write-only-arguments/tp9z2khgzdkas25hwlko.png)
 
 But let's now take a look at how we can supplement ephemeral resources to do the same thing.
 
@@ -70,9 +70,9 @@ provider "postgresql" {
 
 Now analyzing the state file, we can see that it doesn't store the ephemeral resources block; hence, our secret is not exposed.
 
-<INSERT_PIC_2>
+![ephemeral-data-block](https://res.cloudinary.com/dy09028kh/image/upload/v1750503203/terraform-ephemeral-resources-and-write-only-arguments/udrmbeqwobkmxbit6dbl.png)
 
-## Write Only Arguments
+## Write-Only Arguments
 
 This feature was introduced in Terraform version 1.11, which solved the problem of lacking ephemeral resources. Suppose you initialize the secret at runtime via a variable, but you have to provide it in a resource instead of a provider. When you provide the secret in the resource, its value gets stored in a state file, like in the example below.
 
@@ -90,7 +90,7 @@ resource "aws_db_instance" "test" {
 }
 ```
 
-<INSERT_PIC_3>
+![normal-resource](https://res.cloudinary.com/dy09028kh/image/upload/v1750503203/terraform-ephemeral-resources-and-write-only-arguments/ngwozkogf8py3ailxlzw.png)
 
 Although the variable's value didn't get stored, the aws_db_instance resource stored the password for state comparison. With the write-only attribute, you can provide the password, but it will not get stored in the state file.
 
@@ -119,17 +119,17 @@ resource "aws_db_instance" "test" {
 
 We have now replaced password with the write-only (wo) argument and specified its version as 1. You can see in the state file that it doesn't contain the password value, but only the version.
 
-<INSERT_PIC_4>
+![write-only-argument](https://res.cloudinary.com/dy09028kh/image/upload/v1750503203/terraform-ephemeral-resources-and-write-only-arguments/mbqh4frllemsy8evezux.png)
 
 Whenever we want to rotate the password, we can change the `password_wo_version` parameter, which will cause the random_password to regenerate and update the DB instance password.
 
 Here is the `terraform plan` output when I provide different values to the `db_password` variable.
 
-<INSERT_PIC_5>
+![same-version](https://res.cloudinary.com/dy09028kh/image/upload/v1750503203/terraform-ephemeral-resources-and-write-only-arguments/cnrwmnlzm5sbl1zqbupv.png)
 
 You can see that it didn't show any change since it's not comparing the password value. But look at when I bump the `password_wo_version` to 2 and provide the same password.
 
-<INSERT_PIC_6>
+![different-version](https://res.cloudinary.com/dy09028kh/image/upload/v1750503203/terraform-ephemeral-resources-and-write-only-arguments/x5eb9kwp45lvcwthbuub.png)
 
 You can see that it shows to modify the password since it is comparing the version, not the value.
 
@@ -171,7 +171,7 @@ resource "null_resource" "set_user_password" {
     command = <<EOT
       aws elasticache modify-user \
         --user-id test-user \
-        --authentication-mode Type=password,Passwords="${ephemeral.random_password.user_password}" \
+        --authentication-mode Type=password,Passwords="${ephemeral.random_password.user_password.result}" \
         --region "us-east-1"
     EOT
   }
@@ -186,7 +186,7 @@ resource "aws_ssm_parameter" "user_ssm_password" {
 
   name             = "/elasticache_user_password"
   type             = "SecureString"
-  value_wo         = ephemeral.random_password.user_password
+  value_wo         = ephemeral.random_password.user_password.result
   value_wo_version = local.password_version
 }
 ```
@@ -195,7 +195,7 @@ As you can see, not only are we updating the ElastiCache user password, but also
 
 ## Closing Remarks
 
-There are many useful use cases for this feature, like setting up a free secret storage Git repo using AWS Parameter Store and Terraform, in which the secrets are created/modified/deleted via GitHub Actions pipeline, but the values are ephemeral. Maybe I'll write a blog about it someday, but I encourage you to try out various things and share any suggestions in the comments section. Thanks for reading!
+There are numerous applications for this feature, such as creating a free secret storage Git repo using AWS Parameter Store and Terraform, in which the secrets are created/modified/deleted via GitHub Actions pipeline, but the values are ephemeral. Maybe I'll write a blog about it someday, but I encourage you to experiment and share your ideas in the comments section. Thank you for reading.
 
 <br/>
 <h2>Comments</h2>
